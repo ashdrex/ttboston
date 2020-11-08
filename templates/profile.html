@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+
+{% endblock %}
+
+
+{% block body %}
+<body style = "font-family: 'Noto Sans JP', sans-serif;">
+    <section>
+        <h1>Hi, what's your name?</h1>
+
+        <form action="/profile" method="POST">
+            <input type="text" name="content" id="content" required> 
+            <input type="submit" value="Enter">
+        </form>
+    </section>
+</body>
+{% endblock %}
