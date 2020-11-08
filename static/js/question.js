@@ -26,21 +26,79 @@ function Question(text, choices, answer) {
 }
  
 Question.prototype.isCorrectAnswer = function(choice) {
-    if(this.answer[0] === choice) {
-        return 3
+    if(this.text === "How often do you eat meat?"){
+        if(this.answer[0] === choice) {
+            return 0
+        }
+        else if(this.answer[1] === choice) {
+            return 604
+        }
+        else if(this.answer[2] === choice) {
+            return 1611
+        }
+        else if(this.answer[3] === choice) {
+            return 2820
+        }
     }
-    if(this.answer[1] === choice) {
-        return 2
+    else if(this.text === "How often do you eat chicken?"){
+        if(this.answer[0] === choice) {
+            return 0
+        }
+        else if(this.answer[1] === choice) {
+            return 106
+        }
+        else if(this.answer[2] === choice) {
+            return 284
+        }
+        else if(this.answer[3] === choice) {
+            return 497
+        }
     }
-    if(this.answer[2] === choice) {
-        return 1
+    else if(this.text === "How often do you eat pork?"){
+        if(this.answer[0] === choice) {
+            return 0
+        }
+        else if(this.answer[1] === choice) {
+            return 140
+        }
+        else if(this.answer[2] === choice) {
+            return 375
+        }
+        else if(this.answer[3] === choice) {
+            return 656
+        }
     }
-    if(this.answer[3] === choice) {
-        return 0
+    else if(this.text === "How often do you eat lamb?"){
+        if(this.answer[0] === choice) {
+            return 0
+        }
+        else if(this.answer[1] === choice) {
+            return 339
+        }
+        else if(this.answer[2] === choice) {
+            return 904
+        }
+        else if(this.answer[3] === choice) {
+            return 1582
+        }
+    }
+    else if(this.text === "How often do you eat fish?"){
+        if(this.answer[0] === choice) {
+            return 0
+        }
+        else if(this.answer[1] === choice) {
+            return 146
+        }
+        else if(this.answer[2] === choice) {
+            return 390
+        }
+        else if(this.answer[3] === choice) {
+            return 683
+        }
     }
 }
  
- 
+
 function populate() {
     if(quiz.isEnded()) {
         showScores();
@@ -79,14 +137,14 @@ function showProgress() {
  
 function showScores() {
     var gameOverHTML = "<h1>Result</h1>";
-    gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+    gameOverHTML += "<h2 id='score'> Your total gas emission: " + quiz.score + "</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
 };
  
 // create questions here
 var questions = [
-    new Question("How many days a week do you eat meat?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
+    new Question("How often do you eat meat?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
     new Question("How often do you eat chicken?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
     new Question("How often do you eat pork?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
     new Question("How often do you eat lamb?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
