@@ -26,7 +26,7 @@ function Question(text, choices, answer) {
 }
  
 Question.prototype.isCorrectAnswer = function(choice) {
-    if(this.text === "How often do you eat meat?"){
+    if(this.text === "How often do you eat beef?"){
         if(this.answer[0] === choice) {
             return 0
         }
@@ -137,14 +137,14 @@ function showProgress() {
  
 function showScores() {
     var gameOverHTML = "<h1>Result</h1>";
-    gameOverHTML += "<h2 id='score'> Your total gas emission: " + quiz.score + "</h2>";
+    gameOverHTML += "<h2 id='score'> Your eating habits release " + quiz.score + " kilograms of greenhouse gas emissions annually. To put this into perspective, a gasoline car emits about 4200 kilograms of carbon dioxide every year. Implementing more plant-based foods into your diet is one way to reduce your carbon footprint.</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
 };
  
 // create questions here
 var questions = [
-    new Question("How often do you eat meat?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
+    new Question("How often do you eat beef?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
     new Question("How often do you eat chicken?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
     new Question("How often do you eat pork?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
     new Question("How often do you eat lamb?", ["Never", "1-2 times a week", "3-5 times a week", "Daily"], ["Never", "1-2 times a week", "3-5 times a week", "Daily"]),
